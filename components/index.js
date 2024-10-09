@@ -10,6 +10,8 @@ const reducer = (state = initialState, action) => {
       return { count: state.count + 1 };
     case "DECREMENT":
       return { count: state.count - 1 };
+    case "ADD":
+      return { count: state.count + action.payload.num };
     default:
       return state;
   }
@@ -28,3 +30,4 @@ store.dispatch({ type: "INCREMENT" });
 store.dispatch({ type: "DECREMENT" });
 store.dispatch({ type: "INCREMENT" });
 store.dispatch({ type: "INCREMENT" });
+store.dispatch({ type: "ADD", payload: { num: 20 } });
